@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:demo/async_redux/app_state.dart';
+import 'package:demo/common/app_state.dart';
 import 'package:demo/firebase_options.dart';
-import 'package:demo/hive_database/hive_constants.dart';
+import 'package:demo/common/hive_constants.dart';
 import 'package:demo/l10n/app_localizations.dart';
 import 'package:demo/localization/locale_manager.dart';
 import 'package:demo/network_api/utils/locator.dart';
@@ -145,24 +145,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-// Future<void> initRemoteConfig() async {
-//   await remoteConfig.setConfigSettings(
-//     RemoteConfigSettings(
-//       fetchTimeout: const Duration(seconds: 10),
-//       minimumFetchInterval: const Duration(minutes: 1),
-//     ),
-//   );
-
-//   // await remoteConfig.setDefaults({
-//   //   'name': 'Tirumal',
-//   //   'age': 26,
-//   //   'hobbie': 'Cricket',
-//   // });
-
-//   await remoteConfig.fetchAndActivate();
-
-//   remoteConfig.onConfigUpdated.listen((event) async {
-//     await remoteConfig.activate();
-//   });
-// }

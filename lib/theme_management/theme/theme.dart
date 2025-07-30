@@ -57,6 +57,14 @@ final ThemeData lightTheme = ThemeData(
     behavior: SnackBarBehavior.floating,
     contentTextStyle: TextStyle(color: AppColors.black),
   ),
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: TextStyle(color: AppColors.blue),
+    focusColor: AppColors.blue,
+    hoverColor: AppColors.blue,
+    focusedBorder: UnderlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue),
+    ),
+  ),
   brightness: Brightness.light,
 );
 
@@ -123,7 +131,8 @@ final ThemeData darkTheme = ThemeData(
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(color: AppColors.tealAccent),
     focusColor: AppColors.tealAccent,
-    focusedBorder: OutlineInputBorder(
+    hoverColor: AppColors.tealAccent,
+    focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(color: AppColors.tealAccent),
     ),
   ),

@@ -1,0 +1,10 @@
+{
+	"title" : "Hello World!",
+    "@title": {
+        "description" : "The conventional newborn programmer greeting"
+    },
+    "appBarTitle" : "Localization Demo",
+    "englishOption" : "English",
+    "marathiOption" : "Marathi",
+    "nextOption" : "Next"
+}

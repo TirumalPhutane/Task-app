@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:demo/async_redux/typedef.dart';
+import 'package:demo/common/typedef.dart';
 
 class DeleteProductViewmodel extends Vm {
   DeleteProductViewmodel({required this.loading, required this.deleteProduct})

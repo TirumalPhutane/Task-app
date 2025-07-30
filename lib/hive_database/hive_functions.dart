@@ -1,4 +1,4 @@
-import 'package:demo/hive_database/hive_constants.dart';
+import 'package:demo/common/hive_constants.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveFunctions {

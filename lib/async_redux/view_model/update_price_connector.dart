@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:demo/async_redux/actions/update_price_action.dart';
-import 'package:demo/async_redux/app_state.dart';
+import 'package:demo/common/app_state.dart';
 import 'package:demo/async_redux/screens/update_price_screen.dart';
 import 'package:demo/async_redux/view_model/update_price_viewmodel.dart';
 import 'package:demo/network_api/model/product.dart';

@@ -1,4 +1,4 @@
-import 'package:demo/async_redux/typedef.dart';
+import 'package:demo/common/typedef.dart';
 import 'package:demo/network_api/model/product.dart';
 import 'package:flutter/material.dart';
 

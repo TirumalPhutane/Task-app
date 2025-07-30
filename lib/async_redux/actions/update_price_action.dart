@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:async_redux/async_redux.dart';
-import 'package:demo/async_redux/app_state.dart';
+import 'package:demo/common/app_state.dart';
 import 'package:demo/network_api/services/data_service.dart';
 import 'package:demo/network_api/utils/locator.dart';
 

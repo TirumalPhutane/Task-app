@@ -1,3 +1,4 @@
+import 'package:demo/theme_management/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart'
@@ -32,7 +33,7 @@ class _PermissionHandlerScreenState extends State<PermissionHandlerScreen> {
         action: const SnackBarAction(
           label: 'Settings',
           onPressed: openAppSettings,
-          textColor: Colors.blue,
+          textColor: AppColors.white,
         ),
       );
     } else {
@@ -63,7 +64,7 @@ class _PermissionHandlerScreenState extends State<PermissionHandlerScreen> {
           action: const SnackBarAction(
             label: 'Settings',
             onPressed: openAppSettings,
-            textColor: Colors.blue,
+            textColor: AppColors.white,
           ),
         );
       }
@@ -82,10 +83,10 @@ class _PermissionHandlerScreenState extends State<PermissionHandlerScreen> {
   }) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(message, style: const TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
-        elevation: 10,
-        behavior: SnackBarBehavior.floating,
+        content: Text(message),
+        // backgroundColor: Colors.white,
+        // elevation: 10,
+        // behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(10),
         action: action,
       ),
@@ -95,10 +96,7 @@ class _PermissionHandlerScreenState extends State<PermissionHandlerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Permissions Demo'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
+      appBar: AppBar(title: const Text('Permissions Demo')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

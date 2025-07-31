@@ -36,8 +36,8 @@ class _PushNotificationsState extends State<PushNotifications> {
     print(token);
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      // print('Got a message whilst in the foreground!');
-      // print('Message data: ${message.notification!.title}');
+      print('Got a message whilst in the foreground!');
+      print('Message data: ${message.notification!.title}');
       // print('Message data: ${message.data}');
 
       // if (message.notification != null) {

@@ -40,6 +40,7 @@ class AppColors {
   static const Color darkCard = Color.fromARGB(255, 42, 42, 42);
   static const Color darkScaffoldBackground = Color(0xFF121212);
   static Color lightBlue = Colors.blue[50]!;
+  static const Color orange = Colors.deepOrange;
 }
 
 // class AppColors {

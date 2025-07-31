@@ -11,7 +11,7 @@ class FirebaseScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         spacing: 10,
         children: [
-          Text(message),
+          message == null ? Text('') : Text(message),
           ElevatedButton(
             onPressed: () => throw Exception(),
             child: const Text("Throw Test Exception"),

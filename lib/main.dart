@@ -10,6 +10,7 @@ import 'package:demo/scrolling_widgets/gridview_demo.dart';
 import 'package:demo/navigation/route_names.dart';
 import 'package:demo/theme_management/theme/theme.dart';
 import 'package:demo/theme_management/theme_manager.dart';
+import 'package:firebase_app_installations/firebase_app_installations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -17,13 +18,15 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-//import 'package:firebase_in_app_messaging/firebase_in_app_messaging.dart';
+import 'package:firebase_in_app_messaging/firebase_in_app_messaging.dart';
 
 final ThemeManager themeManager = ThemeManager();
 final LocaleManager localeManager = LocaleManager();
 final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
+final FirebaseInAppMessaging fiam = FirebaseInAppMessaging.instance;
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -51,7 +54,18 @@ Future<void> main() async {
   const InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
   );
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  await flutterLocalNotificationsPlugin.initialize(
+    initializationSettings,
+    onDidReceiveNotificationResponse: (NotificationResponse response) {
+      final payload = response.payload;
+      if (payload != null && payload.isNotEmpty) {
+        navigatorKey.currentState?.pushNamed(
+          RouteNames.notificationScreen,
+          arguments: payload,
+        );
+      }
+    },
+  );
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   await flutterLocalNotificationsPlugin
@@ -60,7 +74,11 @@ Future<void> main() async {
       >()
       ?.createNotificationChannel(channel);
 
-  //initRemoteConfig();
+  final String id = await FirebaseInstallations.instance.getId();
+  FirebaseInstallations.instance.onIdChange.listen((token) {
+    print('FID token: $token');
+  });
+  print('Installation ID : $id');
 
   await Hive.initFlutter();
   await Hive.openBox(userHiveBox);

@@ -46,7 +46,7 @@ class NotificationService {
             styleInformation: bigPictureStyle,
           ),
         ),
-        payload: message.data['name'],
+        payload: 'Tirumal',
       );
     }
   }

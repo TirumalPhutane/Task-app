@@ -63,7 +63,7 @@ class _PushNotificationsState extends State<PushNotifications> {
     if (message.data['name'] == 'Tirumal') {
       Navigator.pushNamed(
         context,
-        RouteNames.firebaseScreen,
+        RouteNames.notificationScreen,
         arguments: message.toString(),
       );
     }

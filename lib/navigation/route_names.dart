@@ -7,6 +7,7 @@ import 'package:demo/file_demo/counter_storage.dart';
 import 'package:demo/file_demo/file_demo.dart';
 import 'package:demo/file_demo/file_picker.dart';
 import 'package:demo/firebase/firebase_screen.dart';
+import 'package:demo/firebase/notification_screen.dart';
 import 'package:demo/firebase/push_notifications.dart';
 import 'package:demo/firebase/remote_config.dart';
 import 'package:demo/hive_database/hive_screen.dart';
@@ -63,6 +64,7 @@ class RouteNames {
   static const String firebaseScreen = '/FirebaseScreen';
   static const String remoteConfig = '/RemoteConfig';
   static const String pushNotification = '/PushNotification';
+  static const String notificationScreen = '/NotificationScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final Object? argument = settings.arguments;
@@ -173,9 +175,8 @@ class RouteNames {
           builder: (BuildContext context) => HiveScreen(),
         );
       case firebaseScreen:
-        final String message = argument == null ? "" : argument as String;
         return MaterialPageRoute(
-          builder: (BuildContext context) => FirebaseScreen(message: message),
+          builder: (BuildContext context) => FirebaseScreen(),
         );
       case remoteConfig:
         return MaterialPageRoute(
@@ -184,6 +185,10 @@ class RouteNames {
       case pushNotification:
         return MaterialPageRoute(
           builder: (BuildContext context) => PushNotifications(),
+        );
+      case notificationScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => NotificationScreen(),
         );
       default:
         //final name = arugment == null ? "" : arugment as String;

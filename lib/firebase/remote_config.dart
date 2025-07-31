@@ -1,4 +1,4 @@
-import 'package:demo/common/remote_config_constants.dart';
+import 'package:demo/firebase/remote_config_service.dart';
 import 'package:demo/theme_management/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,7 @@ class RemoteConfig extends StatefulWidget {
 
 class _RemoteConfigState extends State<RemoteConfig> {
   bool isLoading = false;
+  RemoteConfigService remoteConfigService = RemoteConfigService();
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,13 @@ class _RemoteConfigState extends State<RemoteConfig> {
                   : Column(
                       spacing: 10,
                       children: [
-                        CustomCard(text: 'Name: $userName'),
-                        CustomCard(text: 'Age: $userAge'),
-                        CustomCard(text: 'Hobbie: $userHobbie'),
+                        CustomCard(
+                          text: 'Name: ${remoteConfigService.userName}',
+                        ),
+                        CustomCard(text: 'Age: ${remoteConfigService.userAge}'),
+                        CustomCard(
+                          text: 'Hobbie: ${remoteConfigService.userHobbie}',
+                        ),
                       ],
                     ),
             ],

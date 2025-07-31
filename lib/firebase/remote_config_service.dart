@@ -23,4 +23,8 @@ class RemoteConfigService {
       onUpdate();
     });
   }
+
+  String get userName => remoteConfig.getString('name');
+  int get userAge => remoteConfig.getInt('age');
+  String get userHobbie => remoteConfig.getString('hobbie');
 }

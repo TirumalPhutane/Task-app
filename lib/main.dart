@@ -1,6 +1,6 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:demo/common/app_state.dart';
-import 'package:demo/firebase/remote_config_service.dart';
+import 'package:demo/firebase/remote_config/remote_config_service.dart';
 import 'package:demo/firebase_options.dart';
 import 'package:demo/common/hive_constants.dart';
 import 'package:demo/l10n/app_localizations.dart';

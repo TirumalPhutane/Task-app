@@ -8,13 +8,14 @@ import 'package:demo/file_demo/file_demo.dart';
 import 'package:demo/file_demo/file_picker.dart';
 import 'package:demo/firebase/firebase_auth/email/sign_in_with_google_screen.dart';
 import 'package:demo/firebase/firebase_auth/email_password/email_password_screen.dart';
+import 'package:demo/firebase/firebase_auth/firebase_auth_screen.dart';
 import 'package:demo/firebase/firebase_auth/phone/otp_screen.dart';
 import 'package:demo/firebase/firebase_auth/phone/phone_auth_home_screen.dart';
 import 'package:demo/firebase/firebase_auth/phone/phone_number_auth_screen.dart';
 import 'package:demo/firebase/firebase_screen.dart';
-import 'package:demo/firebase/notification_screen.dart';
-import 'package:demo/firebase/push_notifications.dart';
-import 'package:demo/firebase/remote_config.dart';
+import 'package:demo/firebase/push_notifications/notification_screen.dart';
+import 'package:demo/firebase/push_notifications/push_notifications.dart';
+import 'package:demo/firebase/remote_config/remote_config.dart';
 import 'package:demo/hive_database/hive_screen.dart';
 import 'package:demo/icons/icons.dart';
 import 'package:demo/images/images.dart';
@@ -75,6 +76,7 @@ class RouteNames {
   static const String phoneNumberAuthScreen = '/PhoneNumberAuthScreen';
   static const String otpScreen = '/OtpScreen';
   static const String phoneAuthHomeScreen = '/PhoneAuthHomeScreen';
+  static const String firebaseAuthScreen = '/FirebaseAuthScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final Object? argument = settings.arguments;
@@ -221,6 +223,10 @@ class RouteNames {
       case phoneAuthHomeScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => PhoneAuthHomeScreen(),
+        );
+      case firebaseAuthScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FirebaseAuthScreen(),
         );
       default:
         //final name = arugment == null ? "" : arugment as String;

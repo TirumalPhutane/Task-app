@@ -1,4 +1,4 @@
-import 'package:demo/firebase/remote_config_service.dart';
+import 'package:demo/firebase/remote_config/remote_config_service.dart';
 import 'package:demo/theme_management/app_colors.dart';
 import 'package:flutter/material.dart';
 

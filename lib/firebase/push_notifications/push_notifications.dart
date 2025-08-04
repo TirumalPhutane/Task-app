@@ -1,4 +1,4 @@
-import 'package:demo/firebase/notification_service.dart';
+import 'package:demo/firebase/push_notifications/notification_service.dart';
 import 'package:demo/navigation/route_names.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';

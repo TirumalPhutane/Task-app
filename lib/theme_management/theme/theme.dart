@@ -27,11 +27,11 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w400,
       color: AppColors.gray,
     ),
-    labelMedium: TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.bold,
-      color: AppColors.green,
-    ),
+    // labelMedium: TextStyle(
+    //   fontSize: 15,
+    //   fontWeight: FontWeight.bold,
+    //   color: AppColors.green,
+    // ),
   ),
   elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
   appBarTheme: const AppBarTheme(
@@ -57,11 +57,18 @@ final ThemeData lightTheme = ThemeData(
     behavior: SnackBarBehavior.floating,
     contentTextStyle: TextStyle(color: AppColors.black),
   ),
+  textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.blue),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: TextStyle(color: AppColors.blue),
-    focusColor: AppColors.blue,
-    hoverColor: AppColors.blue,
-    focusedBorder: UnderlineInputBorder(
+    labelStyle: TextStyle(fontWeight: FontWeight.normal),
+    floatingLabelStyle: TextStyle(
+      color: AppColors.blue,
+      fontWeight: FontWeight.normal,
+    ),
+    outlineBorder: BorderSide(),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue),
+    ),
+    focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: AppColors.blue),
     ),
   ),
@@ -129,7 +136,10 @@ final ThemeData darkTheme = ThemeData(
     contentTextStyle: TextStyle(color: AppColors.black),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: TextStyle(color: AppColors.tealAccent),
+    labelStyle: TextStyle(
+      color: AppColors.tealAccent,
+      fontWeight: FontWeight.normal,
+    ),
     focusColor: AppColors.tealAccent,
     hoverColor: AppColors.tealAccent,
     focusedBorder: UnderlineInputBorder(

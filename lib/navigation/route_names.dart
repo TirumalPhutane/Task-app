@@ -6,6 +6,8 @@ import 'package:demo/date_operations/date_operations_demo.dart';
 import 'package:demo/file_demo/counter_storage.dart';
 import 'package:demo/file_demo/file_demo.dart';
 import 'package:demo/file_demo/file_picker.dart';
+import 'package:demo/firebase/firebase_auth/email/sign_in_with_google_screen.dart';
+import 'package:demo/firebase/firebase_auth/email_password/email_password_screen.dart';
 import 'package:demo/firebase/firebase_screen.dart';
 import 'package:demo/firebase/notification_screen.dart';
 import 'package:demo/firebase/push_notifications.dart';
@@ -65,6 +67,8 @@ class RouteNames {
   static const String remoteConfig = '/RemoteConfig';
   static const String pushNotification = '/PushNotification';
   static const String notificationScreen = '/NotificationScreen';
+  static const String emailPasswordScreen = '/EmailPasswordScreen';
+  static const String signInWithGoogleScreen = '/SignInWithGoogleScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final Object? argument = settings.arguments;
@@ -189,6 +193,14 @@ class RouteNames {
       case notificationScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => NotificationScreen(),
+        );
+      case emailPasswordScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => EmailPasswordScreen(),
+        );
+      case signInWithGoogleScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SignInWithGoogleScreen(),
         );
       default:
         //final name = arugment == null ? "" : arugment as String;

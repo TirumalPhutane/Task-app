@@ -41,6 +41,7 @@ class AppColors {
   static const Color darkScaffoldBackground = Color(0xFF121212);
   static Color lightBlue = Colors.blue[50]!;
   static const Color orange = Colors.deepOrange;
+  static const Color firebase = Color(0xFFf5a331);
 }
 
 // class AppColors {

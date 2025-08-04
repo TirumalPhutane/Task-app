@@ -118,6 +118,7 @@ const availableCategories = [
   Category(id: 'c22', title: 'Firebase', color: Colors.indigoAccent),
   Category(id: 'c23', title: 'Remote Config', color: Colors.indigoAccent),
   Category(id: 'c24', title: 'Push Notification', color: Colors.indigoAccent),
+  Category(id: 'c25', title: 'Authentication', color: Colors.indigoAccent),
 ];
 
 String getScreenForCategory(String id) {
@@ -170,6 +171,8 @@ String getScreenForCategory(String id) {
       return RouteNames.remoteConfig;
     case 'c24':
       return RouteNames.pushNotification;
+    case 'c25':
+      return RouteNames.signInWithGoogleScreen;
     // Add more cases for other categories
     default:
       return RouteNames.gridViewDemoScreen;

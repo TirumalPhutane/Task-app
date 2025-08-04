@@ -23,11 +23,11 @@ class FirebaseAuthScreen extends StatelessWidget {
               Navigator.pushNamed(context, getScreenForList(index));
             },
             child: Card(
-              elevation: 3.0,
+              elevation: 2.0,
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: ListTile(
                 key: ValueKey(index),
-                //leading: const Icon(Icons.list),
+                leading: getIcon(index),
                 trailing: const Icon(Icons.keyboard_arrow_right),
                 title: Text(
                   authentications[index],
@@ -54,4 +54,18 @@ String getScreenForList(int index) {
       return RouteNames.emailPasswordScreen;
   }
   return "";
+}
+
+Icon getIcon(int index) {
+  switch (index) {
+    case 0:
+      return Icon(Icons.email);
+    case 1:
+      return Icon(Icons.email_outlined);
+    case 2:
+      return Icon(Icons.phone);
+    case 3:
+      return Icon(Icons.facebook);
+  }
+  return Icon(Icons.email);
 }

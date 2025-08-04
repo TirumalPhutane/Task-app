@@ -8,6 +8,9 @@ import 'package:demo/file_demo/file_demo.dart';
 import 'package:demo/file_demo/file_picker.dart';
 import 'package:demo/firebase/firebase_auth/email/sign_in_with_google_screen.dart';
 import 'package:demo/firebase/firebase_auth/email_password/email_password_screen.dart';
+import 'package:demo/firebase/firebase_auth/phone/otp_screen.dart';
+import 'package:demo/firebase/firebase_auth/phone/phone_auth_home_screen.dart';
+import 'package:demo/firebase/firebase_auth/phone/phone_number_auth_screen.dart';
 import 'package:demo/firebase/firebase_screen.dart';
 import 'package:demo/firebase/notification_screen.dart';
 import 'package:demo/firebase/push_notifications.dart';
@@ -69,6 +72,9 @@ class RouteNames {
   static const String notificationScreen = '/NotificationScreen';
   static const String emailPasswordScreen = '/EmailPasswordScreen';
   static const String signInWithGoogleScreen = '/SignInWithGoogleScreen';
+  static const String phoneNumberAuthScreen = '/PhoneNumberAuthScreen';
+  static const String otpScreen = '/OtpScreen';
+  static const String phoneAuthHomeScreen = '/PhoneAuthHomeScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final Object? argument = settings.arguments;
@@ -201,6 +207,20 @@ class RouteNames {
       case signInWithGoogleScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => SignInWithGoogleScreen(),
+        );
+      case phoneNumberAuthScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => PhoneNumberAuthScreen(),
+        );
+      case otpScreen:
+        final verificationId = argument == null ? "" : argument as String;
+        return MaterialPageRoute(
+          builder: (BuildContext context) =>
+              OtpScreen(verificationId: verificationId),
+        );
+      case phoneAuthHomeScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => PhoneAuthHomeScreen(),
         );
       default:
         //final name = arugment == null ? "" : arugment as String;

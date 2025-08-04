@@ -172,7 +172,7 @@ String getScreenForCategory(String id) {
     case 'c24':
       return RouteNames.pushNotification;
     case 'c25':
-      return RouteNames.signInWithGoogleScreen;
+      return RouteNames.phoneNumberAuthScreen;
     // Add more cases for other categories
     default:
       return RouteNames.gridViewDemoScreen;
